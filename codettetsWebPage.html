@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Codetettespage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    
+    <div class="navbar">
+        <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+        <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+        <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+        <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+      </div>
+
+    <div id ="nameslist">
+        <p class="list" style="text-align: center;">names list</p>
+        <li class="list">pedro</li>
+        <li class="list">maxwal</li>
+        <li class="list">etc</li>
+    </div>
+
+    <div id="infobout">
+        <p class="info">contact me at</p>
+        <a href="dylchelvia@gmail.com" class="info">dylchelvia@gmail.com</a>
+    </div>
+
+    <div id ="namew">
+    <p id = "name" placeholder = "what is your name?"></p>
+    <input id ="name change" type="text" placeholder="wats is your name?" onkeydown=""/>
+    </div>
+    <div id="chatbox" aria-placeholder="chats wil apear here!">Happy chatting!</div>
+    <div id="frame">
+        <input id="chatInput" type="text" placeholder="Type a message" onkeydown="sendMsg(this)" class="type" />
+        <button onclick="sendMessageButton(getElementById('chatInput').value); getElementById('chatInput').value='';"
+            class="button">
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        // Create a client instance
+        client = new Paho.MQTT.Client("test.mosquitto.org", 8080, client_id = "", clean_session = "true", userdata = "none", protocol = "MQTTv311", transport = "tcp");
+
+        // set callback handlers
+        client.onConnectionLost = onConnectionLost;
+        client.onMessageArrived = onMessageArrived;
+
+        // connect the client
+        client.connect({ onSuccess: onConnect });
+
+
+        // called when the client connects
+        function onConnect() {
+            // Once a connection has been made, make a subscription and send a message.
+            console.log("onConnect");
+            client.subscribe("codettes2022");
+            message = new Paho.MQTT.Message("Dylan signed on!");
+            message.destinationName = "codettes2022";
+            client.send(message);
+        }
+
+        function sendMessageButton(msgtext) {
+            if (msgtext != '') {
+                message = new Paho.MQTT.Message("Button says: " + msgtext);
+                message.destinationName = "codettes2022";
+                client.send(message);
+            }
+        }
+        // OR listen to the Enter event on n input box
+        function sendMsg(ele) {
+            if (event.key === 'Enter') {
+                message = new Paho.MQTT.Message('Input says: ' + ele.value);
+                message.destinationName = "codettes2022";
+                client.send(message);
+                //alert(ele.value); 
+                ele.value = ""; // reset the input after entering       
+            }
+        }
+
+        //sends the name of the person whos typing
+        function sendname(ele) {
+            if (event.key === 'Enter') {
+                var input = document.getElementById.innerHTML("namechange")
+                var inputText = ele.value;
+                ele.value = "";
+                document.getElementById("name").innerHTML += input
+            }
+        }
+
+        // called when the client loses its connection
+        function onConnectionLost(responseObject) {
+            if (responseObject.errorCode !== 0) {
+                console.log("onConnectionLost:" + responseObject.errorMessage);
+            }
+        }
+
+        // called when a message arrives
+        function onMessageArrived(message) {
+            console.log("onMessageArrived:" + message.payloadString);
+            // To do: if user is myself do different style or ignore the message and write directly to log
+            document.getElementById("chatbox").innerHTML += "<br> >> " + message.payloadString
+        }
+    </script>
+</body>
+
+</html>

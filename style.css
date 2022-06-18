@@ -1,0 +1,154 @@
+body{
+    background-color: blue;
+}
+
+
+.navbar {
+
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+    top: 0%;
+  }
+  
+  .navbar a {
+    float: left;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .navbar a:hover {
+    background-color: #000;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+  }
+.list {
+    color: black;
+    left: 10px;
+}
+
+#chatbox {
+    float: center;
+    width: 600px;
+    height: 600px;
+    background-color: cornflowerblue;
+    text-align: center;
+    font-weight: 900;
+    color: #fff;
+    font-family: arial;
+    position: fixed;
+    top: 55px;
+    right: 400px;
+    border-radius: 5px;
+    border-style: double;
+    border-color: cadetblue;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.text {
+    text-align: center;
+    position: fixed;
+    border-radius: 10px;
+    border-color: aqua;
+    border-style: ridge;
+    bottom: 0;
+
+}
+
+.type {
+    text-align: center;
+    position: fixed;
+    width: 500px;
+    background-color:aquamarine;
+    border-radius: 17px;
+    
+
+}
+
+.button {
+    position: relative;
+    color: aqua;
+    border-color: #818181;
+    left: 510px;
+    width: 15px;
+    height: 20px;
+}
+
+#frame {
+    position: fixed;
+    bottom: 0%;
+    left: 400px;
+    width: 530px;
+    height: 20px;
+}
+
+h1 {
+    position: fixed;
+    text-align: center;
+
+}
+
+#nameslist
+{
+    width: 130px;
+    position: fixed;
+    z-index: 1;
+    background:rgb(60, 104, 114);
+    overflow-x: hidden;
+    padding: 8px 0;
+    top: 53px;
+    right: 20px;
+    border-style: hidden;
+    border-color: #04aa99;
+    border-radius: 5px;
+}
+
+#infobout
+{
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    background:rgb(60, 104, 114);
+    overflow-x: hidden;
+    padding: 8px 0;
+    bottom: 10px;
+    left: 10px;
+    border-style:hidden;
+    border-color: #04aa99;
+    border-radius: 5px;
+}
+.info
+{
+    text-align: center;
+}
+#namew
+{
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    background:rgb(60, 104, 114);
+    overflow-x: hidden;
+    padding: 8px 0;
+    top: 53px;
+    left: 10px;
+    border-style:hidden;
+    border-color: #04aa99;
+    border-radius: 5px;
+}
+::placeholder{
+    font-family: 'Times New Roman', Times, serif;
+    color: #000;
+    opacity: 1;
+}
