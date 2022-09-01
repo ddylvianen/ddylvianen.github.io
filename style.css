@@ -1,0 +1,219 @@
+.chats {
+    background-color: rgb(240, 0, 208);
+    border-radius: 17px;
+    width: 26%;
+    height: 600px;
+    float: left;
+    margin: 0px;
+    top: 5%;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.online {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.ulistt{
+    list-style-image: url('original.jpg');
+}
+.im1{
+    list-style-image: url('im3.jpg');
+}
+.im2{
+    list-style-image: url('im2.jpg');
+}
+.im3{
+    list-style-image: url('im3.jpg');
+}
+.userlist {
+    
+    width: 100%;
+    bottom: 0;
+    height: auto;
+    text-align: left;
+    overflow-y: auto;
+}
+
+.current {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+
+    border-radius: 17px;
+}
+
+.currentchat {
+    border-style: solid;
+    width: 72%;
+    height: 600px;
+    float: right;
+    background-color: rgb(240, 0, 208);
+    border-radius: 17px;
+    bottom: 0;
+    border-color: 
+    black;
+    border-width: 2px;
+}
+
+.chatlog {
+    border-color: #38444d;
+    height: 520px;
+    overflow: auto;
+    background-color: rgb(255, 0, 217);
+}
+
+.typing {
+    text-align: center;
+    width: 90%;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+
+
+}
+
+.button {
+    color: rgb(30, 37, 37);
+    border-color: #818181;
+    border-radius: 17px;
+    width: 15px;
+    height: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #38444d;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color:rgb(255, 0, 217);
+    border-radius: 14px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 14px;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+    border-radius: 14px;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    border-radius: 14px;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: blueviolet;
+    border-radius: 14px;
+  }
+  
+  .dropdown-content {
+    border-style: solid;
+    display: none;
+    position: absolute;
+    background-color:rgb(240, 0, 208);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 14px;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: blueviolet;
+    border-radius: 14px;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+@media only screen and (min-width: 768px) {
+    .h4 {
+        font-size: medium;
+    }
+
+}
+.aside{
+    top: 5%;
+}
+
+.nothing{
+    display: none;
+}
+
+.sizer{
+    width: 10px;
+    height: 10px;
+}
+
+.login  {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: 
+    url('bratz-logo-2.jpg');
+    background-repeat: repeat;
+}
+.login-box{
+     background-color: rgb(255, 0, 217);
+     height: max-content;
+     width: max-content;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+     padding: 10px;
+     border-radius: 14px;
+     border-style: solid; 
+}
+.login-input{
+    position: static;
+    border-radius: 14px;
+    border-style: groove;
+}
+.chatapp{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: 
+    url('bratz-logo-2.jpg');
+    background-repeat: repeat;
+
+}
